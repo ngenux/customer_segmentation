@@ -40,6 +40,8 @@ def predictUsingKMeans(self):
 	#print(self._Id)
 	#print(self._df)
 	#print(self.model_args['K'])
+	if not (self._Id in self._df.columns ):
+		raise Exception(f'Provided ID column {self._Id} is not avialble in the input dataframe!!!')
 	lower = 2
 	upper = self.model_args['K']
 	K=range(lower,upper)
